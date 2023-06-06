@@ -1,5 +1,6 @@
 # phylogenomics-Xanthomonas-Xv
 
+```
 ### Download NCBI Datasets command line tools
 curl -o datasets 'https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v1/linux-amd64/datasets'
 chmod u+x datasets 
@@ -22,3 +23,4 @@ perl ../phylogenomics-Xanthomonas-1/rename_files.pl  ../phylogenomics-Xanthomona
 
 cd -
 
+```
