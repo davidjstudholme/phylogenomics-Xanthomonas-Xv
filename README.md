@@ -46,7 +46,7 @@ cd -
 screen
 conda activate phame
 cp phylogenomics-Xanthomonas-1/phame.ctl .
-phame ./phame.ctl
+./phame ./phame.ctl
 
 
 
