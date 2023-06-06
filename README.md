@@ -17,10 +17,37 @@ unzip xanthomonas_genome_assemblies.zip
 ln -s ncbi_dataset/data/GCA_*/GCA_*.fna .
 
 unzip xanthomonas_genome_assemblies.zip
-ln -s ncbi_dataset/data/GCA_*/GCA_*.fna .
 ls *.fna
-perl ../phylogenomics-Xanthomonas-1/rename_files.pl  ../phylogenomics-Xanthomonas-1/genomes.txt
+perl rename_files.pl  genomes.txt
 
 cd -
+
+
+### Set-up the ref/ directory
+mkdir ref
+cd ref
+ln -s ../genomes/NCPPB_4379.fasta
+
+cd -
+
+
+### Set-up the workdir/ directory
+mkdir workdir
+cd workdir
+ln -s ../genomes/*.contig .
+cd -
+
+### Run PhaME
+### Shakya, M., Ahmed, S.A., Davenport, K.W. et al. 
+### Standardized phylogenetic and molecular evolutionary analysis applied to species across the microbial tree of life. 
+### Sci Rep 10, 1723 (2020). 
+### https://doi.org/10.1038/s41598-020-58356-1
+
+screen
+conda activate phame
+cp phylogenomics-Xanthomonas-1/phame.ctl .
+phame ./phame.ctl
+
+
 
 ```
